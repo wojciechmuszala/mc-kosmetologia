@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+}
+
+//----- variables
+@import url("variables/_variables.scss");
+
+//----- mixins
+@import url("mixins/_mixins.scss");
+
+//----- components
+@import url("components/_logo.scss");
+@import url("components/_menu.scss");
+@import url("components/_offer.scss");
+@import url("components/_about.scss");
+@import url("components/_info.scss");
