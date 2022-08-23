@@ -5,14 +5,16 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 70px;
+    height: $menu-height;
     background-color: $color-dark;
+    z-index: 10;
+    box-shadow: 2px 0 5px 5px $color-dark;
 }
 
 .menu-mobile {
     &__list {
         position: fixed;
-        top: 70px;
+        top: $menu-height;
         right: -100%;
         width: 60vw;
         height: 100vh;
@@ -32,7 +34,8 @@
         text-decoration: none;
         text-transform: uppercase;
         color: $color-grey-light;
-        font-weight: 700;
+        font-weight: 400;
+        letter-spacing: 3px;
     }
 }
 
@@ -49,18 +52,23 @@
     }
 
     &__item {
-        padding: 10px 20px;
-        
+        padding: 10px;
+        margin: 0 10px;
+        border-bottom: 1px solid transparent;
+        transition: 0.3s;
+        &:hover {
+            border-bottom: 1px solid $color-grey-light;
+        }
     }
 
     &__link {
         text-decoration: none;
         text-transform: uppercase;
         color: $color-grey-light;
-        padding: 5px 15px;
+        padding: 5px 0;
         transition: 0.3s;
         border-bottom: 1px solid transparent;
-        
+        letter-spacing: 3px;
     }
 }
 

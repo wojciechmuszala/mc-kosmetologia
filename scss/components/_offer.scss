@@ -1,5 +1,49 @@
 .offer {
+    &__wrapper {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
     &__container {
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 22%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 30px;
+        position: relative;
+        height: 230px;
+        width: 330px;
+        background-color: $color-grey;
+        transition: 0.7s;
+
+        &::after {
+            content: " ";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 0;
+            height: 50px;
+            background-color: black;
+            opacity: 0.1;
+            transition: all 0.7s ease;
+            // transition-delay: 0.5s;
+        }
+
+        &:hover,
+        &:active {
+            box-shadow: 1px 1px 5px grey;
+        }
+
+        &:hover::after,
+        &:active::after {
+            width: 100%;
+        }
+
         &--hands {
         }
 
@@ -9,10 +53,80 @@
         &--eyes {
         }
 
-        &--others {
+        &--packages {
         }
     }
 
     &__description {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 12px;
+        color: white;
+        z-index: 1;
+    }
+}
+
+.service {
+    // display: none;
+    &--active {
+        .service__wrapper {
+            height: 410px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 96vw;
+        height: 410px;
+        background-color: $color-grey;
+        margin: 20px auto;
+        box-shadow: 1px 1px 5px grey;
+        overflow: hidden;
+        transition: 0.5s all ease;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        // justify-content: center;
+        align-content: flex-start;
+        column-gap: 150px;
+        padding: 30px;
+        list-style: none;
+        height: 100%;
+        // transition: 0.5s all ease;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        width: 300px;
+        margin: 15px 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .offer {
+        &__container {
+            flex-basis: 45%;
+        }
+    }
+    .service {
+        &__wrapper {
+            // height: ;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .offer {
+        &__container {
+            flex-basis: 90%;
+        }
+    }
+    .service {
     }
 }
