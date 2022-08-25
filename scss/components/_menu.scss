@@ -9,9 +9,7 @@
     background-color: $color-dark;
     z-index: 10;
     box-shadow: 2px 0 5px 5px $color-dark;
-}
 
-.menu-mobile {
     &__list {
         position: fixed;
         top: $menu-height;
@@ -39,46 +37,13 @@
     }
 }
 
-.menu-desktop {
-    &__list {
-        display: none;
-        align-items: center;
-        list-style: none;
-        text-decoration: none;
-
-        &:last-child {
-            margin: 0 50px 0 0; //unset Bootstrap styles
-        }
-    }
-
-    &__item {
-        padding: 10px;
-        margin: 0 10px;
-        border-bottom: 1px solid transparent;
-        transition: 0.3s;
-        &:hover {
-            border-bottom: 1px solid $color-grey-light;
-        }
-    }
-
-    &__link {
-        text-decoration: none;
-        text-transform: uppercase;
-        color: $color-grey-light;
-        padding: 5px 0;
-        transition: 0.3s;
-        border-bottom: 1px solid transparent;
-        letter-spacing: 3px;
-    }
-}
-
 .burger {
     position: absolute;
     top: 50%;
     right: 30px;
     transform: translateY(-50%);
-    // width: 50px;
     padding: 20px;
+
     &__line {
         display: block;
         top: 50%;
@@ -90,21 +55,52 @@
 }
 
 @media screen and (min-width: 767px) {
-    .menu-mobile {
-        &__list {
-            display: none;
-        }
-    }
-
-    .burger {
-        display: none;
-    }
-
-    .menu-desktop {
-        // display: flex;
-
+    .menu {
         &__list {
             display: flex;
+            justify-content: flex-end;
+            position: static;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            list-style: none;
+            text-decoration: none;
+
+            &:last-child {
+                margin: 0 50px 0 0; //unset Bootstrap styles
+            }
+        }
+
+        &__item {
+            padding: 10px;
+            margin: 0 10px;
+            border-bottom: 1px solid transparent;
+            transition: 0.3s;
+            &:hover {
+                border-bottom: 1px solid $color-grey-light;
+            }
+        }
+
+        &__link {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $color-grey-light;
+            padding: 5px 0;
+            transition: 0.3s;
+            border-bottom: 1px solid transparent;
+            letter-spacing: 3px;
+        }
+
+        .burger {
+            display: none;
+        }
+
+        .menu-desktop {
+            // display: flex;
+
+            &__list {
+                display: flex;
+            }
         }
     }
 }
