@@ -1,3 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -80px;
+  visibility: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +20,11 @@ body {
   font-family: "Montserrat", sans-serif;
   background-color: #f6f6f6;
   height: 300vh;
+}
+
+.page-content__wrapper {
+  max-width: 1800px;
+  margin: 0 auto;
 }
 
 .title {
@@ -40,7 +56,7 @@ body {
 
 .logo__img {
   width: 100%;
-  max-width: 350px;
+  max-width: 450px;
 }
 
 .menu {
@@ -78,7 +94,7 @@ body {
 }
 
 .menu__item {
-  padding: 20px 10px;
+  padding: 20px 20px;
 }
 
 .menu__link {
@@ -161,20 +177,31 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
+  position: relative;
+  padding-inline: 20px;
 }
 
 .offer__container {
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
+  margin: 0 auto;
+  gap: 30px;
+  margin-block: 30px;
+}
+
+.offer__service {
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  -ms-flex-preferred-size: 22%;
-      flex-basis: 22%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -185,16 +212,14 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 30px;
-  margin-bottom: 30px;
   position: relative;
-  height: 230px;
-  width: 330px;
+  height: 30vh;
   background-color: #e7e5e5;
   -webkit-transition: 0.7s;
   transition: 0.7s;
 }
 
-.offer__container::after {
+.offer__service::after {
   content: " ";
   position: absolute;
   top: 50%;
@@ -209,28 +234,26 @@ body {
   transition: all 0.7s ease;
 }
 
-.offer__container:hover, .offer__container:active {
-  -webkit-box-shadow: 1px 1px 5px grey;
-          box-shadow: 1px 1px 5px grey;
+.offer__service:hover, .offer__service:active {
+  -webkit-box-shadow: 1px 1px 5px 1px #808080;
+          box-shadow: 1px 1px 5px 1px #808080;
 }
 
-.offer__container:hover::after, .offer__container:active::after {
+.offer__service:hover::after, .offer__service:active::after {
   width: 100%;
 }
 
 .offer__description {
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-size: 12px;
+  font-size: 2vw;
   color: white;
   z-index: 1;
 }
 
-.service--active .service__wrapper {
-  height: 410px;
-}
-
-.service__wrapper {
+.price-list__wrapper {
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -238,21 +261,22 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 96vw;
-  height: 410px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   background-color: #e7e5e5;
-  margin: 20px auto;
-  -webkit-box-shadow: 1px 1px 5px grey;
-          box-shadow: 1px 1px 5px grey;
+  margin-top: 5px;
+  -webkit-box-shadow: 1px 1px 5px 1px #808080;
+          box-shadow: 1px 1px 5px 1px #808080;
   overflow: hidden;
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
 }
 
-.service__list {
+.price-list__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -266,12 +290,11 @@ body {
       align-content: flex-start;
   -webkit-column-gap: 150px;
           column-gap: 150px;
-  padding: 30px;
   list-style: none;
   height: 100%;
 }
 
-.service__item {
+.price-list__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -282,17 +305,34 @@ body {
   margin: 15px 0;
 }
 
-@media screen and (max-width: 1024px) {
-  .offer__container {
-    -ms-flex-preferred-size: 45%;
-        flex-basis: 45%;
+@media screen and (min-width: 794px) {
+  .offer__wrapper {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
-}
-
-@media screen and (max-width: 768px) {
   .offer__container {
-    -ms-flex-preferred-size: 90%;
-        flex-basis: 90%;
+    -ms-flex-preferred-size: 22%;
+        flex-basis: 22%;
+    margin-bottom: 20px;
+  }
+  .offer__service {
+    height: 15vw;
+  }
+  .offer__description {
+    font-size: 0.8vw;
+  }
+  .price-list {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .price-list__wrapper {
+    -ms-flex-preferred-size: unset;
+        flex-basis: unset;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */

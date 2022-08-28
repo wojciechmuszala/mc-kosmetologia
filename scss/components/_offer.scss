@@ -1,23 +1,33 @@
 .offer {
     &__wrapper {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         flex-wrap: wrap;
+        column-gap: 30px;
+        position: relative;
+        // width: 100%;
+        padding-inline: 20px;
     }
 
     &__container {
+        flex-basis: 90%;
+        margin: 0 auto;
+        gap: 30px;
+        margin-block: 30px;
+
+    }
+
+    &__service {
         flex-grow: 0;
         flex-shrink: 0;
-        flex-basis: 22%;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 30px;
-        margin-bottom: 30px;
         position: relative;
-        height: 230px;
-        width: 330px;
-        background-color: $color-grey;
+        height: 30vh;
+        background-color: $color__grey;
+
         transition: 0.7s;
 
         &::after {
@@ -36,7 +46,8 @@
 
         &:hover,
         &:active {
-            box-shadow: 1px 1px 5px grey;
+            box-shadow: $box-shadow--natural;
+
         }
 
         &:hover::after,
@@ -60,29 +71,28 @@
     &__description {
         text-transform: uppercase;
         letter-spacing: 3px;
-        font-size: 12px;
+        font-size: 2vw;//12px;
         color: white;
         z-index: 1;
     }
 }
 
-.service {
-    // display: none;
+.price-list {
     &--active {
-        .service__wrapper {
-            height: 410px;
-        }
+
     }
 
     &__wrapper {
+        flex-basis: 90%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        width: 96vw;
-        height: 410px;
-        background-color: $color-grey;
-        margin: 20px auto;
-        box-shadow: 1px 1px 5px grey;
+        align-items: center;
+        // justify-content: center;
+        // width: 100%;//95vw;
+        height: max-content;
+        background-color: $color__grey;
+        margin-top: 5px;
+        box-shadow: $box-shadow--natural;
         overflow: hidden;
         transition: 0.5s all ease;
     }
@@ -94,7 +104,7 @@
         // justify-content: center;
         align-content: flex-start;
         column-gap: 150px;
-        padding: 30px;
+        // padding: 30px;
         list-style: none;
         height: 100%;
         // transition: 0.5s all ease;
@@ -108,25 +118,42 @@
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 794px) {
     .offer {
+        &__wrapper {
+            justify-content: space-around;
+        }
+
         &__container {
-            flex-basis: 45%;
+            flex-basis: 22%;
+            margin-bottom: 20px;
+        }
+
+        &__service {
+            height: 15vw;
+        }
+
+        &__description {
+            font-size: 0.8vw;
         }
     }
-    .service {
+    .price-list {
+        order: 1;
         &__wrapper {
-            // height: ;
+            flex-basis: unset;
+
+            order: 1;
+            width: 100%;
         }
     }
 }
 
-@media screen and (max-width: 768px) {
-    .offer {
-        &__container {
-            flex-basis: 90%;
-        }
-    }
-    .service {
-    }
-}
+// @media screen and (min-width: 768px) {
+//     .offer {
+//         &__container {
+//             flex-basis: 45%;
+//         }
+//     }
+//     .service {
+//     }
+// }

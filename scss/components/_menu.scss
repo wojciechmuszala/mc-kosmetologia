@@ -5,33 +5,34 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: $menu-height;
-    background-color: $color-dark;
+    height: $menu__height;
+    background-color: $color__dark;
     z-index: 10;
-    box-shadow: 2px 0 5px 5px $color-dark;
+    box-shadow: 2px 0 5px 5px $color__dark;
 
     &__list {
         position: fixed;
-        top: $menu-height;
+        top: $menu__height;
         right: -100%;
         width: 60vw;
         height: 100vh;
-        background-color: $color-dark;
+        background-color: $color__dark;
         list-style: none;
         transition: 0.3s linear;
+
         &--active {
             right: 0;
         }
     }
 
     &__item {
-        padding: 20px 10px;
+        padding: 20px 20px;
     }
 
     &__link {
         text-decoration: none;
         text-transform: uppercase;
-        color: $color-grey-light;
+        color: $color__grey--light;
         font-weight: 400;
         letter-spacing: 3px;
     }
@@ -49,7 +50,7 @@
         top: 50%;
         width: 30px;
         height: 5px;
-        background-color: $color-grey-light;
+        background-color: $color__grey--light;
         margin: 5px 0;
     }
 }
@@ -77,14 +78,14 @@
             border-bottom: 1px solid transparent;
             transition: 0.3s;
             &:hover {
-                border-bottom: 1px solid $color-grey-light;
+                border-bottom: 1px solid $color__grey--light;
             }
         }
 
         &__link {
             text-decoration: none;
             text-transform: uppercase;
-            color: $color-grey-light;
+            color: $color__grey--light;
             padding: 5px 0;
             transition: 0.3s;
             border-bottom: 1px solid transparent;
